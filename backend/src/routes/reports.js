@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { asyncHandler as h } from '../middleware/asyncHandler.js';
+import * as c from '../controllers/reports.controller.js';
+const r = Router();
+r.get('/revenue', h(c.revenue));
+r.get('/category-sales', h(c.categorySales));
+r.get('/top-customers', h(c.topCustomers));
+r.get('/top-products', h(c.topProductsReport));
+r.get('/order-status', h(c.orderStatus));
+export default r;
